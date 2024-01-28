@@ -18,4 +18,60 @@ export function logout() {
   return api.get("/logout");
 }
 
+export function getRequiresInvoiceJobs() {
+  const options = {
+    params: {
+      filter: {
+        status: "requires_invoicing",
+      },
+    },
+  };
+
+  return api.get("/joblist", options);
+}
+export function getActionRequiredJobs() {
+  const options = {
+    params: {
+      filter: {
+        status: "action_required",
+      },
+    },
+  };
+
+  return api.get("/joblist", options);
+}
+export function getLateJobs() {
+  const options = {
+    params: {
+      filter: {
+        status: "late",
+      },
+    },
+  };
+
+  return api.get("/joblist", options);
+}
+export function getQuoteApprovedJobs() {
+  const options = {
+    params: {
+      filter: {
+        status: "approved",
+      },
+    },
+  };
+
+  return api.get("/quotelist", options);
+}
+export function getInvoiceDraftedJobs() {
+  const options = {
+    params: {
+      filter: {
+        status: "draft",
+      },
+    },
+  };
+
+  return api.get("/invoicelist", options);
+}
+
 export default api;
