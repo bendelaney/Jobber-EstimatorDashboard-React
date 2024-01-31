@@ -18,7 +18,8 @@ const Auth = () => {
       (async () => {
         const { data: user } = await authenticateUser(code);
         setUser(user);
-        navigate("/home", { replace: true });
+        console.log("user", user);
+        // navigate("/home", { replace: true });
       })();
     }
   }, []);
