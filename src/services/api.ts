@@ -6,8 +6,13 @@ const api = axios.create({
   withCredentials: true,
 });
 
+// export function authenticateUser(code: string) {
+//   return api.post<User>("/request_access_token", {}, { params: { code } });
+// }
 export function authenticateUser(code: string) {
-  return api.post<User>("/request_access_token", {}, { params: { code } });
+  return api
+    .post<User>("/request_access_token", {}, { params: { code } })
+    .then((response) => response.data);
 }
 
 export function getClients() {
