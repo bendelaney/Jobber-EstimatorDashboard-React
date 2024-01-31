@@ -15,14 +15,18 @@ const Auth = () => {
 
   useEffect(() => {
     if (code) {
-      (async () => {
-        const { data: user } = await authenticateUser(code);
-        setUser(user);
-        console.log("user", user);
-        navigate("/home", { replace: true });
-      })();
+      authenticateUser(code)
+        .then((user) => {
+          setUser(user);
+          console.log("user", user);
+          navigate("/home", { replace: true });
+        })
+        .catch((error) => {
+          // Handle error
+          console.error(error);
+        });
     }
-  }, []);
+  }, [code, setUser, navigate]);
   return (
     <div
       style={{
