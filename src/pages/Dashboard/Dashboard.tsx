@@ -18,7 +18,7 @@ const Dashboard = () => {
       <div className={styles.listsContainer}>
         <div className={styles.columnContainer}>
           <h3>
-            <span className={styles.colorJob}>JOBS</span>Requires Invoicing
+            <span className={styles.colorJob}>Jobs</span>Requires Invoicing
           </h3>
           <div className={styles.listWrapper}>
             <RequiresInvoiceJobList />
@@ -26,7 +26,7 @@ const Dashboard = () => {
         </div>
         <div className={styles.columnContainer}>
           <h3>
-            <span className={styles.colorJob}>JOBS</span>Action Required
+            <span className={styles.colorJob}>Jobs</span>Action Required
           </h3>
           <div className={styles.listWrapper}>
             <ActionRequiredJobList />
@@ -34,7 +34,7 @@ const Dashboard = () => {
         </div>
         <div className={styles.columnContainer}>
           <h3>
-            <span className={styles.colorJob}>JOBS</span>Late
+            <span className={styles.colorJob}>Jobs</span>Late
           </h3>
           <div className={styles.listWrapper}>
             <LateJobList />

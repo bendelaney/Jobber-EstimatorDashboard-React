@@ -5,6 +5,8 @@ import Auth from "pages/Auth";
 import Home from "pages/Home/Home";
 import Dashboard from "pages/Dashboard/Dashboard";
 import Tester from "pages/Tester";
+import ArboristTest from "pages/ArboristTest";
+
 import {
   Navigate,
   Outlet,
@@ -27,6 +29,7 @@ const Routes = () => {
       <Route path="auth" element={<Auth />} />
       <Route path="Dashboard" element={<Dashboard />} />
       <Route path="tester" element={<Tester />} />
+      <Route path="ArboristTest" element={<ArboristTest />} />
     </ReactRouterRoutes>
   );
 };
