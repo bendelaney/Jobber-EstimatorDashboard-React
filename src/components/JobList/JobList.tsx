@@ -14,7 +14,7 @@ interface JobListProps {
 
 const JobList = ({ jobs, isFetchingJobs, title }: JobListProps) => {
   return (
-    <div className={styles.cardWrapper}>
+    <div className={styles.jobListWrapper}>
       {isFetchingJobs ? (
         <Spinner size="small" />
       ) : jobs.length > 0 ? (

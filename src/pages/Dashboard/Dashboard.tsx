@@ -40,9 +40,6 @@ const Dashboard = () => {
             <LateJobList />
           </div>
         </div>
-      </div>
-
-      <div className={styles.listsContainer}>
         <div className={styles.columnContainer}>
           <h3>
             <span className={styles.colorQuote}>Quotes</span>Approved

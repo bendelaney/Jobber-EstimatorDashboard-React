@@ -1,5 +1,31 @@
-.cardWrapper {
+.jobListWrapper {
+  background-color: whitesmoke;
+
   > div {
     box-sizing: border-box;
+
+    ul {
+      box-sizing: border-box;
+    }
+
+    li {
+      > div {
+        background-color: #d8d4d4;
+        border-bottom: 0;
+        box-shadow: 0 4px 5px -3px gray;
+      }
+      button {
+        > div:first-child {
+          padding-right: 0;
+        }
+        padding: 0;
+        display: flex;
+        align-items: center; // This will center the items vertically
+      }
+      p {
+        font-size: 1.1em;
+        font-weight: 500;
+      }
+    }
   }
 }
