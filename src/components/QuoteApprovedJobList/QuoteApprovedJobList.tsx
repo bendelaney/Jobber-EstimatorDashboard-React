@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import JobList from "components/JobList";
-import { getQuoteApprovedJobs } from "services";
+import { getApprovedQuotes } from "services";
 import { ListItemProps } from "@jobber/components/dist/List/ListItem";
 
 const QuoteApprovedJobList = () => {
@@ -11,7 +11,7 @@ const QuoteApprovedJobList = () => {
     (async () => {
       try {
         setIsFetchingJobs(true);
-        const response = await getQuoteApprovedJobs();
+        const response = await getApprovedQuotes();
         const quotesData = response.data.data.quotes.edges.map((edge: any) => {
           const quote = edge.node;
           const bidder = quote.customFields.find(

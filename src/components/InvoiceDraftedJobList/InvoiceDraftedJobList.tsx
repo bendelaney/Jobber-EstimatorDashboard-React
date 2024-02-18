@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import JobList from "components/JobList";
-import { getInvoiceDraftedJobs } from "services";
+import { getDraftInvoices } from "services";
 import { ListItemProps } from "@jobber/components/dist/List/ListItem";
 
 const InvoiceDraftedJobList = () => {
@@ -11,7 +11,7 @@ const InvoiceDraftedJobList = () => {
     (async () => {
       try {
         setIsFetchingJobs(true);
-        const response = await getInvoiceDraftedJobs();
+        const response = await getDraftInvoices();
         const jobsData = response.data.data.invoices.edges.map((edge: any) => {
           const invoice = edge.node;
           const bidder = invoice.customFields.find(

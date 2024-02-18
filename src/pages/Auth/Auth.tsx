@@ -13,30 +13,16 @@ const Auth = () => {
 
   if (code === null) redirectToJobberOAuth();
 
-  // useEffect(() => {
-  //   if (code) {
-  //     (async () => {
-  //       const { data: user } = await authenticateUser(code);
-  //       setUser(user);
-  //       console.log("user", user);
-  //       navigate("/home", { replace: true });
-  //     })();
-  //   }
-  // }, []);
   useEffect(() => {
     if (code) {
-      authenticateUser(code)
-        .then((user) => {
-          setUser(user);
-          console.log("user", user);
-          navigate("/home", { replace: true });
-        })
-        .catch((error) => {
-          // Handle error
-          console.error(error);
-        });
+      (async () => {
+        const { data: user } = await authenticateUser(code);
+        setUser(user);
+        console.log("user", user);
+        navigate("/home", { replace: true });
+      })();
     }
-  }, [code, setUser, navigate]);
+  }, []);
   return (
     <div
       style={{

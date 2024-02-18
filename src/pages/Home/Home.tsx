@@ -22,7 +22,6 @@ function Home() {
         setIsFetchingClients(false);
       } catch (error) {
         console.error("Error fetching clients:", error);
-
         setIsFetchingClients(false);
         navigate("/auth");
       }

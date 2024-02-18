@@ -6,13 +6,8 @@ const api = axios.create({
   withCredentials: true,
 });
 
-// export function authenticateUser(code: string) {
-//   return api.post<User>("/request_access_token", {}, { params: { code } });
-// }
 export function authenticateUser(code: string) {
-  return api
-    .post<User>("/request_access_token", {}, { params: { code } })
-    .then((response) => response.data);
+  return api.post<User>("/request_access_token", {}, { params: { code } });
 }
 
 export function getClients() {
@@ -23,7 +18,7 @@ export function logout() {
   return api.get("/logout");
 }
 
-export function getRequiresInvoiceJobs() {
+export function getRequiresInvoicingJobs() {
   const options = {
     params: {
       filter: {
@@ -32,7 +27,7 @@ export function getRequiresInvoiceJobs() {
     },
   };
 
-  return api.get("/joblist", options);
+  return api.get("/jobs", options);
 }
 export function getActionRequiredJobs() {
   const options = {
@@ -43,7 +38,7 @@ export function getActionRequiredJobs() {
     },
   };
 
-  return api.get("/joblist", options);
+  return api.get("/jobs", options);
 }
 export function getLateJobs() {
   const options = {
@@ -54,9 +49,9 @@ export function getLateJobs() {
     },
   };
 
-  return api.get("/joblist", options);
+  return api.get("/jobs", options);
 }
-export function getQuoteApprovedJobs() {
+export function getApprovedQuotes() {
   const options = {
     params: {
       filter: {
@@ -65,9 +60,9 @@ export function getQuoteApprovedJobs() {
     },
   };
 
-  return api.get("/quotelist", options);
+  return api.get("/quotes", options);
 }
-export function getInvoiceDraftedJobs() {
+export function getDraftInvoices() {
   const options = {
     params: {
       filter: {
@@ -76,7 +71,7 @@ export function getInvoiceDraftedJobs() {
     },
   };
 
-  return api.get("/invoicelist", options);
+  return api.get("/invoices", options);
 }
 
 export default api;
