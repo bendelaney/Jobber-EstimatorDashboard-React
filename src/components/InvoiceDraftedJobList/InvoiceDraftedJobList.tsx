@@ -12,7 +12,6 @@ const InvoiceDraftedJobList = () => {
       try {
         setIsFetchingJobs(true);
         const response = await getInvoiceDraftedJobs();
-        console.log(response);
         const jobsData = response.data.data.invoices.edges.map((edge: any) => {
           const invoice = edge.node;
           const bidder = invoice.customFields.find(

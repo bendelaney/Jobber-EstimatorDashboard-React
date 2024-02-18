@@ -12,7 +12,6 @@ const ActionRequiredJobList = () => {
       try {
         setIsFetchingJobs(true);
         const response = await getActionRequiredJobs();
-        console.log("RESPONSE: " + response);
         const jobsData = response.data.data.jobs.edges.map((edge: any) => {
           const job = edge.node;
           const jobInformation = job.customFields.find(

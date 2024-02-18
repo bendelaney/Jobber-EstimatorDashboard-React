@@ -12,7 +12,6 @@ const RequiresInvoiceJobList = () => {
       try {
         setIsFetchingJobs(true);
         const response = await getRequiresInvoiceJobs();
-        console.log("RESPONSE: " + response);
         const jobsData = response.data.data.jobs.edges.map((edge: any) => {
           const job = edge.node;
           const jobInformation = job.customFields.find(

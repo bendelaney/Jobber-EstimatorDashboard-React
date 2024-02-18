@@ -24,6 +24,7 @@ const Dashboard = () => {
             <RequiresInvoiceJobList />
           </div>
         </div>
+
         <div className={styles.columnContainer}>
           <h3>
             <span className={styles.colorJob}>Jobs</span>Action Required
@@ -32,6 +33,7 @@ const Dashboard = () => {
             <ActionRequiredJobList />
           </div>
         </div>
+
         <div className={styles.columnContainer}>
           <h3>
             <span className={styles.colorJob}>Jobs</span>Late
@@ -40,6 +42,7 @@ const Dashboard = () => {
             <LateJobList />
           </div>
         </div>
+
         <div className={styles.columnContainer}>
           <h3>
             <span className={styles.colorQuote}>Quotes</span>Approved
@@ -48,6 +51,7 @@ const Dashboard = () => {
             <QuoteApprovedJobList />
           </div>
         </div>
+
         <div className={styles.columnContainer}>
           <h3>
             <span className={styles.colorInvoice}>Invoices</span>Drafted, Unsent

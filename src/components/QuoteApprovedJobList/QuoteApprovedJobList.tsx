@@ -12,7 +12,6 @@ const QuoteApprovedJobList = () => {
       try {
         setIsFetchingJobs(true);
         const response = await getQuoteApprovedJobs();
-        console.log(response);
         const quotesData = response.data.data.quotes.edges.map((edge: any) => {
           const quote = edge.node;
           const bidder = quote.customFields.find(
