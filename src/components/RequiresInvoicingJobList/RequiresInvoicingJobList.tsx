@@ -3,7 +3,7 @@ import JobList from "components/JobList";
 import { getRequiresInvoicingJobs } from "services";
 import { ListItemProps } from "@jobber/components/dist/List/ListItem";
 
-const RequiresInvoiceJobList = () => {
+const RequiresInvoicingJobList = () => {
   const [jobs, setJobs] = useState<ListItemProps[] | null>(null);
   const [isFetchingJobs, setIsFetchingJobs] = useState(false);
 
@@ -45,4 +45,4 @@ const RequiresInvoiceJobList = () => {
   return jobs ? <JobList jobs={jobs} isFetchingJobs={isFetchingJobs} /> : null;
 };
 
-export default RequiresInvoiceJobList;
+export default RequiresInvoicingJobList;

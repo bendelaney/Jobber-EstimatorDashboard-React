@@ -3,7 +3,7 @@ import JobList from "components/JobList";
 import { getApprovedQuotes } from "services";
 import { ListItemProps } from "@jobber/components/dist/List/ListItem";
 
-const QuoteApprovedJobList = () => {
+const ApprovedQuoteList = () => {
   const [jobs, setJobs] = useState<ListItemProps[] | null>(null);
   const [isFetchingJobs, setIsFetchingJobs] = useState(false);
 
@@ -43,4 +43,4 @@ const QuoteApprovedJobList = () => {
   return jobs ? <JobList jobs={jobs} isFetchingJobs={isFetchingJobs} /> : null;
 };
 
-export default QuoteApprovedJobList;
+export default ApprovedQuoteList;

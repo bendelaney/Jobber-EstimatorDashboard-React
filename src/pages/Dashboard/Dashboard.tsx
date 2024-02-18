@@ -3,11 +3,11 @@
 import styles from "./Dashboard.module.scss";
 import { Text } from "@jobber/components/Text";
 import React, { useState, useEffect } from "react";
-import RequiresInvoiceJobList from "components/RequiresInvoiceJobList";
+import RequiresInvoicingJobList from "components/RequiresInvoicingJobList";
 import LateJobList from "components/LateJobList";
 import ActionRequiredJobList from "components/ActionRequiredJobList";
-import QuoteApprovedJobList from "components/QuoteApprovedJobList";
-import InvoiceDraftedJobList from "components/InvoiceDraftedJobList";
+import ApprovedQuoteList from "components/ApprovedQuoteList";
+import DraftInvoiceList from "components/DraftInvoiceList";
 // import ActionRequiredJobList from 'components/ActionRequiredJobList';
 
 const Dashboard = () => {
@@ -21,7 +21,7 @@ const Dashboard = () => {
             <span className={styles.colorJob}>Jobs</span>Requires Invoicing
           </h3>
           <div className={styles.listWrapper}>
-            <RequiresInvoiceJobList />
+            <RequiresInvoicingJobList />
           </div>
         </div>
 
@@ -48,7 +48,7 @@ const Dashboard = () => {
             <span className={styles.colorQuote}>Quotes</span>Approved
           </h3>
           <div className={styles.listWrapper}>
-            <QuoteApprovedJobList />
+            <ApprovedQuoteList />
           </div>
         </div>
 
@@ -57,7 +57,7 @@ const Dashboard = () => {
             <span className={styles.colorInvoice}>Invoices</span>Drafted, Unsent
           </h3>
           <div className={styles.listWrapper}>
-            <InvoiceDraftedJobList />
+            <DraftInvoiceList />
           </div>
         </div>
       </div>

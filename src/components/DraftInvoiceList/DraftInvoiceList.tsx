@@ -3,7 +3,7 @@ import JobList from "components/JobList";
 import { getDraftInvoices } from "services";
 import { ListItemProps } from "@jobber/components/dist/List/ListItem";
 
-const InvoiceDraftedJobList = () => {
+const DraftInvoiceList = () => {
   const [invoices, setJobs] = useState<ListItemProps[] | null>(null);
   const [isFetchingJobs, setIsFetchingJobs] = useState(false);
 
@@ -52,4 +52,4 @@ const InvoiceDraftedJobList = () => {
   ) : null;
 };
 
-export default InvoiceDraftedJobList;
+export default DraftInvoiceList;
