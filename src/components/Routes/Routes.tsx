@@ -36,7 +36,11 @@ const Routes = () => {
 
 const ProtectedRoutes = () => {
   const { user } = useUserContext();
-  if (!user.accountName) return <Navigate to="/auth" />;
+
+  if (!user.accountName) {
+    console.log("NO USER, NAVIGATING TO /auth", user);
+    return <Navigate to="/auth" />;
+  }
 
   return <Outlet />;
 };

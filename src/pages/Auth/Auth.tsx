@@ -11,14 +11,18 @@ const Auth = () => {
   const navigate = useNavigate();
   const { setUser } = useUserContext();
 
-  if (code === null) redirectToJobberOAuth();
+  if (code === null) {
+    console.log("No 'code', redirecting to jobber oauth...");
+    redirectToJobberOAuth();
+  }
 
   useEffect(() => {
     if (code) {
       (async () => {
         const { data: user } = await authenticateUser(code);
         setUser(user);
-        console.log("user", user);
+        console.log("WE HAVE AN AUTHENTICATED USER:", user);
+        console.log("navigating to /home");
         navigate("/home", { replace: true });
       })();
     }
