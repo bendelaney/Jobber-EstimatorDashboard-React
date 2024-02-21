@@ -18,7 +18,7 @@ const Routes = () => {
       <Route element={<ProtectedRoutes />}>
         {/* TODO: Get rid of this stupid app frame */}
         <Route element={<AppFrame logo={appLogo} />}>
-          <Route index element={<Navigate to="auth" />} />
+          <Route index element={<Navigate to="home" />} />
           <Route path="home" element={<Home />} />
         </Route>
         <Route path="dashboard" element={<Dashboard />} />
