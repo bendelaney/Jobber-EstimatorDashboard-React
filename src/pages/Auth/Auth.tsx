@@ -12,7 +12,6 @@ const Auth = () => {
   const { setUser } = useUserContext();
 
   if (code === null) {
-    console.log("No 'code', redirecting to jobber oauth...");
     redirectToJobberOAuth();
   }
 
@@ -21,9 +20,7 @@ const Auth = () => {
       (async () => {
         const { data: user } = await authenticateUser(code);
         setUser(user);
-        console.log("WE HAVE AN AUTHENTICATED USER:", user);
-        console.log("navigating to /home");
-        navigate("/home", { replace: true });
+        navigate("/dashboard", { replace: true });
       })();
     }
   }, []);
