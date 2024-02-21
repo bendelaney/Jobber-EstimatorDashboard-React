@@ -17,19 +17,18 @@ import {
 const Routes = () => {
   return (
     <ReactRouterRoutes>
-      {
-        <Route element={<ProtectedRoutes />}>
-          <Route element={<AppFrame logo={appLogo} />}>
-            <Route index element={<Navigate to="home" />} />
-            <Route path="home" element={<Home />} />
-          </Route>
+      <Route element={<ProtectedRoutes />}>
+        <Route element={<AppFrame logo={appLogo} />}>
+          <Route index element={<Navigate to="home" />} />
+          <Route path="home" element={<Home />} />
+          <Route path="dashboard" element={<Dashboard />} />
         </Route>
-      }
-      <Route path="home" element={<Home />} />
+      </Route>
+
       <Route path="auth" element={<Auth />} />
-      <Route path="Dashboard" element={<Dashboard />} />
-      <Route path="tester" element={<Tester />} />
-      <Route path="ArboristTest" element={<ArboristTest />} />
+      {/* Pages for testing/tinkering */}
+      {/* <Route path="tester" element={<Tester />} /> */}
+      {/* <Route path="ArboristTest" element={<ArboristTest />} /> */}
     </ReactRouterRoutes>
   );
 };
