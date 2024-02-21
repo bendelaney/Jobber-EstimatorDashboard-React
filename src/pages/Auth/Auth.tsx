@@ -20,7 +20,7 @@ const Auth = () => {
       (async () => {
         const { data: user } = await authenticateUser(code);
         setUser(user);
-        navigate("/dashboard", { replace: true });
+        navigate("/home", { replace: true });
       })();
     }
   }, []);
