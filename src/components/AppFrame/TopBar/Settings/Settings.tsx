@@ -20,6 +20,7 @@ const Settings = () => {
       navigate("/auth");
     }
   }, []);
+
   return (
     <div className={styles.settingsMenu}>
       <Text>{user.accountName}</Text>

@@ -1,11 +1,12 @@
 .pageWrapper {
-  background: linear-gradient(to bottom, #495058, #262525);
+  // background: linear-gradient(to bottom, #495058, #262525);
   height: 100vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
+  font-family: "Jobber Pro", "Poppins", Helvetica, Arial, sans-serif;
 
   h1 {
     flex: 1 0 auto;
@@ -16,57 +17,18 @@
     flex-wrap: wrap;
     align-items: flex-start; // Add this line
     justify-content: flex-start;
-    height: calc(48vh + 20px);
+    // height: calc(48vh + 20px);
     margin-bottom: 20px;
 
     .columnContainer {
       display: flex;
       flex-direction: column;
       max-width: calc(33.33% - 10px);
-      // flex: 1 0 calc(33.33% - 10px);
       flex: 1 1 auto;
       margin-right: 10px;
+      margin-top: var(--space-larger);
       height: 47vh;
-      min-width: 200px;
-
-      .listWrapper {
-        background-color: whitesmoke;
-        height: 100%;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        overflow-y: auto;
-      }
-
-      h3 {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        margin-bottom: 5px;
-        text-transform: uppercase;
-        font-size: 1.08em;
-        color: #f5f5f5;
-
-        > span {
-          font-size: 0.8em;
-          font-weight: 600;
-          padding: 2px 4px;
-          color: white;
-          border-radius: 4px;
-          position: relative;
-          top: -1px;
-          display: inline-block;
-          margin-right: 8px;
-
-          &.colorJob {
-            background-color: var(--color-job);
-            color: black;
-          }
-          &.colorQuote {
-            background-color: var(--color-quote);
-          }
-          &.colorInvoice {
-            background-color: var(--color-invoice);
-          }
-        }
-      }
+      min-width: 350px;
     }
   }
 }

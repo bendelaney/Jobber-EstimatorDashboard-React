@@ -15,7 +15,7 @@ const AppFrame: FC<AppFrameProps> = ({ logo }) => {
       <TopBar />
       <div className={styles.scrollWrapper}>
         <div className={styles.centerWrapper}>
-          <AppLogo logo={logo} />
+          {/* <AppLogo logo={logo} /> */}
           <div className={styles.content}>{<Outlet />}</div>
           <Footer />
         </div>
