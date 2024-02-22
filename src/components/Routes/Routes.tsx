@@ -16,12 +16,9 @@ const Routes = () => {
   return (
     <ReactRouterRoutes>
       <Route element={<ProtectedRoutes />}>
-        {/* TODO: Get rid of this stupid app frame */}
-        {/* <Route element={<AppFrame logo={appLogo} />}> */}
-        <Route index element={<Navigate to="home" />} />
+        <Route index element={<Navigate to="dashboard" />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="home" element={<Home />} />
-        {/* </Route> */}
       </Route>
 
       <Route path="auth" element={<Auth />} />

@@ -7,9 +7,32 @@ import LateJobList from "components/LateJobList";
 import ActionRequiredJobList from "components/ActionRequiredJobList";
 import ApprovedQuoteList from "components/ApprovedQuoteList";
 import DraftInvoiceList from "components/DraftInvoiceList";
+import { getLateJobs } from "services";
+import { useNavigate } from "react-router-dom";
+
 // import ActionRequiredJobList from 'components/ActionRequiredJobList';
 
 const Dashboard = () => {
+  const [jobsData, setJobs] = useState([]);
+  const [isFetchingJobs, setIsFetchingJobs] = useState(false);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        setIsFetchingJobs(true);
+        const { data } = await getLateJobs();
+        setJobs(jobsData);
+        setIsFetchingJobs(false);
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+        setIsFetchingJobs(false);
+        navigate("/auth");
+      }
+    })();
+  }, []);
+
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.listsContainer}>
