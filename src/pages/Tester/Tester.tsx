@@ -1,7 +1,6 @@
 import { Page } from "@jobber/components/Page";
 import styles from "./Tester.module.scss";
 import { Content } from "@jobber/components/Content";
-// import { Text } from "@jobber/components/Text";
 
 export function Tester() {
   return (

@@ -1,11 +1,11 @@
 .pageWrapper {
   // background: linear-gradient(to bottom, #495058, #262525);
-  height: 100vh;
-  overflow-y: auto;
+  // height: 100vh;
+  // overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0 20px 20px;
   font-family: "Jobber Pro", "Poppins", Helvetica, Arial, sans-serif;
 
   h1 {
@@ -18,7 +18,7 @@
     align-items: flex-start; // Add this line
     justify-content: flex-start;
     // height: calc(48vh + 20px);
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 
     .columnContainer {
       display: flex;
@@ -29,6 +29,42 @@
       margin-top: var(--space-larger);
       height: 47vh;
       min-width: 350px;
+    }
+  }
+}
+
+@media print {
+  .pageWrapper {
+    background: none;
+    height: auto;
+    overflow-y: visible;
+    padding: 0;
+    font-family: inherit;
+
+    h1 {
+      flex: none;
+    }
+
+    .listsContainer {
+      display: block;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      justify-content: flex-start;
+      height: auto;
+      margin-bottom: 0;
+
+      .columnContainer {
+        display: block;
+        flex-direction: column;
+        max-width: none;
+        flex: none;
+        margin-right: 0;
+        margin-top: 0;
+        height: auto;
+        min-width: auto;
+
+        * {border: none;}
+      }
     }
   }
 }

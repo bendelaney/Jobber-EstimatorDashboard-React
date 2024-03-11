@@ -51,7 +51,7 @@ const LateJobList = () => {
     <div className={styles.dashboardListWrap}>
       <div className={styles.dashboardListheader}>
         <h3>
-          <span className={styles.colorJob}>Jobs</span>Action Required
+          <span className={styles.colorJob}>Jobs</span>Late
         </h3>
         <Button
           onClick={() => setRefreshKey((oldKey) => oldKey + 1)}

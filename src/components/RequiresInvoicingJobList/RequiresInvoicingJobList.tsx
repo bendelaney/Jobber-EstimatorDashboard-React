@@ -14,6 +14,7 @@ const RequiresInvoicingJobList = () => {
   const refreshList = async () => {
     try {
       setIsFetchingJobs(true);
+
       const response = await getRequiresInvoicingJobs();
       const jobsData = response.data.data.jobs.edges.map((edge: any) => {
         const job = edge.node;

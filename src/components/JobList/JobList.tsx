@@ -16,7 +16,7 @@ const JobList = ({ jobs, isFetchingJobs, title }: JobListProps) => {
   return (
     <div className={styles.jobListWrapper}>
       {isFetchingJobs ? (
-        <Spinner size="small" />
+        <Spinner size="small" inline={false} />
       ) : jobs.length > 0 ? (
         <>
           {title ? <h3>{title}</h3> : null}

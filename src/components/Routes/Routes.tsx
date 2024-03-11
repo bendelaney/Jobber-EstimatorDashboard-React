@@ -1,5 +1,4 @@
-import appLogo from "assets/images/app-logo-placeholder.svg";
-import AppFrame from "components/AppFrame";
+// import AppFrame from "components/AppFrame";
 import { useUserContext } from "../../contexts";
 import Auth from "pages/Auth";
 import Home from "pages/Home/Home";

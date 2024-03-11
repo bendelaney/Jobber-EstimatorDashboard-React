@@ -100,3 +100,52 @@
     }
   }
 }
+
+
+@media print {
+  body {
+    color: black;
+    background-color: white;
+  }
+
+  * {
+    color: black !important;
+    background-color: white !important;
+  }
+
+  h3 {
+    text-shadow: none !important;
+    color: black !important;
+  }
+
+  button:focus {
+    box-shadow: none !important;
+  }
+
+  .dashboardListInnerWrap {
+    border: none !important;
+  }
+
+  ul {
+    padding-bottom: 0 !important;
+  }
+
+  li > div {
+    background-color: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
+  h4 {
+    font-size: inherit !important;
+  }
+
+  .jobListWrapper li button > div:first-child {
+    padding-right: 0 !important;
+  }
+
+  p {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+  }
+}
