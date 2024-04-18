@@ -113,15 +113,14 @@ const Dashboard = () => {
     const nameRegex = /^[^\s-]+$/;
     const geoCodeRegex = /^-[A-Z]+-$/;
     const addressRegex = /^[^\s-][^-\n]*[^\s-]$/;
-    const workCodeRegex = /^(\d+([CPRSFG\*\+]|LO)(\/(\d+([CPRSFG\*\+]|LO)))*\s+\d+(\.\d+)?[dh])(, \d+([CPSFG\*\+]|LO)(\/(\d+([CPSFG\*\+]|LO)))*\s+\d+(\.\d+)?[dh])*$/;
-
+    const workCodeRegex = /^(\d+((([CPRSFG\*\+]|LO)|(\(IC\))|(\(IA\)))(\/(\d+(([CPRSFG\*\+]|LO)|(\(IC\))|(\(IA\)))))*\s+\d+(\.\d+)?[dh])(, \d+((([CPRSFG\*\+]|LO)|(\(IC\))|(\(IA\)))(\/(\d+(([CPRSFG\*\+]|LO)|(\(IC\))|(\(IA\)))))*\s+\d+(\.\d+)?[dh])*$/;
     let message = '';
 
     if (!nameRegex.test(name)) {
-        message = 'Invalid name: Name should not contain spaces or dashes.';
+        message = 'Invalid name: The LastName portion should not contain spaces or dashes.';
         resultElement.className = 'invalid';
     } else if (!geoCodeRegex.test(geoCode)) {
-        message = 'Invalid GeoCode: GeoCode must be uppercase letters enclosed by dashes.';
+        message = 'Invalid GeoCode: GeoCode must be uppercase letters enclosed by dashes. -SW-';
         resultElement.className = 'invalid';
     } else if (!addressRegex.test(address)) {
         message = 'Invalid address: Address must not start or end with a space or dash.';
