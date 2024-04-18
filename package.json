@@ -33,7 +33,8 @@
     "test": "react-app-rewired test",
     "lint": "eslint",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "heroku-postbuild": "npm run build"
   },
   "browserslist": {
     "production": [
