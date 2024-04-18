@@ -58,8 +58,10 @@ const Validator = style.div`
     padding: 10px;
     font-family: 'Arial', sans-serif !important;
     font-size: 14px;
+    font-weight: bold;
 
     &.valid { color: green; }
+    &.mostly-valid { color: orange; }
     &.invalid { color: red; }
     &.invalid span {color: black; font-weight: bold;}
 
@@ -113,38 +115,44 @@ const Dashboard = () => {
     const nameRegex = /^[^\s-]+$/;
     const geoCodeRegex = /^-[A-Z]+-$/;
     const addressRegex = /^[^\s-][^-\n]*[^\s-]$/;
-    const workCodeRegex = /^(\d+((([CPRSFG\*\+]|LO)|(\(IC\))|(\(IA\)))(\/(\d+(([CPRSFG\*\+]|LO)|(\(IC\))|(\(IA\)))))*\s+\d+(\.\d+)?[dh])(, \d+((([CPRSFG\*\+]|LO)|(\(IC\))|(\(IA\)))(\/(\d+(([CPRSFG\*\+]|LO)|(\(IC\))|(\(IA\)))))*\s+\d+(\.\d+)?[dh])*$/;
+    const workCodeRegex = /^(\d+(([CPRSGF]|LO|\(IC\)|\(IA\))[\*\+]?)(\/\d+(([CPRSGF]|LO|\(IC\)|\(IA\))[\*\+]?))*\s+\d+(\.\d+)?[dh].*)(, \d+(([CPRSGF]|LO|\(IC\)|\(IA\))[\*\+]?)(\/\d+(([CPRSGF]|LO|\(IC\)|\(IA\))[\*\+]?))*\s+\d+(\.\d+)?[dh].*)*$/;
+
     let message = '';
+    let className = '';
 
     if (!nameRegex.test(name)) {
         message = 'Invalid name: The LastName portion should not contain spaces or dashes.';
-        resultElement.className = 'invalid';
+        className = 'invalid';
     } else if (!geoCodeRegex.test(geoCode)) {
         message = 'Invalid GeoCode: GeoCode must be uppercase letters enclosed by dashes. -SW-';
-        resultElement.className = 'invalid';
+        className = 'invalid';
     } else if (!addressRegex.test(address)) {
         message = 'Invalid address: Address must not start or end with a space or dash.';
-        resultElement.className = 'invalid';
+        className = 'invalid';
     } else if (!workCode.every(code => workCodeRegex.test(code))) {
         message = 'Invalid WorkCode: Each WorkCode must follow the specified pattern with correct role and duration formatting.';
-        resultElement.className = 'invalid';
+        className = 'invalid';
     } else {
         // We're mostly valid at this point  
 
         // Check for specific WorkCode conditions and Name suggestions
         if (workCode.some(code => code.includes('R')) && !name.startsWith('🔻')) {
-            message = 'That\'s a valid title format, but since you have a remover assigned, please add 🔻 to the beginning of your title.<br>';
+            message = 'That\'s a valid title format.👍🏼<br>But since you have a <span style="border-bottom: 2px solid orange;">R</span>emover assigned, you\'ll get extra points if you add 🔻 to the beginning of your title.<br>';
+            className = 'mostly-valid';
         } else if (workCode.some(code => code.includes('LO')) && !name.startsWith('⚠️')) {
-            message += 'That\'s a valid title format, but since you have a Lift Operator assigned, please add ⚠️ to the beginning of your title.<br>';
+            message += 'That\'s a valid title format.👊🏼<br>However, since you have a <span style="border-bottom: 2px solid orange;">L</span>ift <span style="border-bottom: 2px solid orange;">O</span>perator assigned, adding ⚠️ to the beginning of your title helps us not forget to order the lift ahead of time.<br>';
+            className = 'mostly-valid';
         } else if (workCode.some(code => code.includes('S')) && !name.startsWith('✂️')) {
-            message += 'That\'s a valid title format, but since you have a Lift Operator assigned, please add ✂️ to the beginning of your title.<br>';
+            message += 'That\'s a valid title format.💫<br>Since you have a <span style="border-bottom: 2px solid orange;">S</span>hearer assigned, please add ✂️ to the beginning of your title so we don\'t forget the shears.<br>';
+            className = 'mostly-valid';
         } else {
-            message = '<b>That\'s a valid title format!</b>🌟<br>Thanks for using the validator!';
+            message = '<b>That\'s a valid title format!</b>🌟🌟<br>Thanks for using the validator!';
+            className = 'valid';
         }
         
     }
     resultElement.innerHTML = message;
-    resultElement.className = message.includes('Invalid') ? 'invalid' : 'valid';
+    resultElement.className = className;
     // working, former: 
     // const nameRegex = /^[^\s-]+$/;
     // const geoCodeRegex = /^-[A-Z]+-$/;
