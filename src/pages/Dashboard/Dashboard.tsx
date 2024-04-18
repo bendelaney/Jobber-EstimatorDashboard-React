@@ -222,7 +222,7 @@ const Dashboard = () => {
                   <button onClick={()=>{validateTitle()}}>Check Title</button>
                 </div>
                 <div id="validatorResult" className="" ref={validatorResultRef}></div>
-                <span className="note"><a href="https://spiritpruners.craft.me/visit-title-syntax">Here are the instructions again</a> if you're struggling🙂</span>
+                <span className="note"><a href="https://spiritpruners.craft.me/visit-title-syntax" target="_blank">Here are the instructions again</a> if you're struggling🙂</span>
               </div>
             </div>
           </Validator>
